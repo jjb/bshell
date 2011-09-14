@@ -7,23 +7,27 @@ Add bshell to your project's Gemfile:
 
     gem 'bshell'
 
-> $ bundle install
+<pre>
+$ bundle install
+</pre>
 
 Add this line to your shell config:
 
-> echo '/usr/bin/env bshell prompt_config' >> .bash_profile
-
+<pre>
+echo '/usr/bin/env bshell prompt_config' >> .bash_profile
+</pre>
 
 Usage
 -----
 
-> cd ~/projects/my_bundler_managed_project
-> $ type rake
-> rake not found
-> $ bshell
-> $ type rake
-> /Users/john/.rbenv/shims/rake
-
+<pre>
+cd ~/projects/my_bundler_managed_project
+$ type rake
+rake not found
+$ bshell
+$ type rake
+/Users/john/.rbenv/shims/rake
+</pre>
 
 Customization
 -------------
@@ -34,8 +38,10 @@ Add the current project name to your prompt:
 
 Now you get:
 
-> cd ~/projects/awesome_project
-> $ bshell
-> AwesomeProject$
+<pre>
+cd ~/projects/awesome_project
+$ bshell
+AwesomeProject$
+</pre>
 
 Sweet!
