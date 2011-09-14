@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+case ARGV[0]
+when 'prompt_config'
+  exit unless ENV['BSHELL_BOOT']=='1'
+  ENV['BSHELL_BOOT']=''
+
+  if ENV['BUNDLE_BIN_PATH']
+    gemfile = ENV['BUNDLE_GEMFILE']
+    dir = File.dirname(gemfile)
+
+    if File.file?(dir + '/config/application.rb') # Rails
+      f = File.new(dir + '/config/application.rb') # Not Rails
+      project_name = f.read.match(/module (.*)$/)[1]
+    else
+      project_name = File.basename(dir)
+    end
+
+    # use BUNDLER_PROJECT_NAME in your shell config to customize your prompt
+    # example:
+    #   export $PROMPT=$BUNDLER_PROJECT_NAME$PROMPT
+    ENV['BUNDLER_PROJECT_NAME'] = project_name
+
+    # irrelevant for most environments because the user's shell
+    # config will immediately overwrite PROMPT
+    ENV['PROMPT'] = project_name + ' ' + ENV['PROMPT'] unless ENV['BSHELL_DO_NOT_SET_PROMPT']
+
+    exec ENV['SHELL']
+  end
+else
+  ENV['BSHELL_BOOT']='1'
+  exec "bundle exec #{ENV['SHELL']}"
+end
