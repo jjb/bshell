@@ -45,3 +45,9 @@ AwesomeProject$
 </pre>
 
 Sweet!
+
+Notes
+-----
+ * possible feature: like how rbenv or rvm pick up a ruby version, bshell could automatically pick up a bundler environment when a Gemfile is detected. This would have to be checked whenever the directory is changed... not exactly clear what should happen if a user `cd`s out of a project... fire up a new "normal" shell? For me, this could be okay -- it's rare that I go in and out of project dirs, usually I have Terminals up for the project, and other Terminals for other stuff. But then we'd be firing up more shells inside the ruby invocation or bundler... icky.
+ * n.b.: i haven't used this extensively, there might be corner cases where the environment provided doesn't work out... ruby might run out of memory or munge characters...
+ * Any other feedback, criticism, and ideas are welcome :-)
