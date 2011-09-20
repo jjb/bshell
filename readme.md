@@ -14,14 +14,14 @@ $ bundle install
 Add this line to your shell config:
 
 <pre>
-echo '/usr/bin/env bshell prompt_config' >> .bash_profile
+echo '/usr/bin/env bshell prompt_config' >> ~/.bash_profile
 </pre>
 
 Usage
 -----
 
 <pre>
-cd ~/projects/my_bundler_managed_project
+$ cd ~/projects/my_bundler_managed_project
 $ type rake
 rake not found
 $ bshell
@@ -39,7 +39,7 @@ Add the current project name to your prompt:
 Now you get:
 
 <pre>
-cd ~/projects/awesome_project
+$ cd ~/projects/awesome_project
 $ bshell
 AwesomeProject$
 </pre>
