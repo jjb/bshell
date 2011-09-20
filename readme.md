@@ -14,7 +14,7 @@ $ bundle install
 Add this line to your shell config:
 
 <pre>
-echo '/usr/bin/env bshell prompt_config' >> ~/.bash_profile
+$ echo '/usr/bin/env bshell prompt_config' >> ~/.bash_profile
 </pre>
 
 Usage
